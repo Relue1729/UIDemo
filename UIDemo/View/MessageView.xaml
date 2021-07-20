@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="UIDemo.View.MessageView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:viewModel="clr-namespace:UIDemo.ViewModel" 
+             d:DataContext="{d:DesignInstance Type=viewModel:MessageViewModel}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Border Width="800"
+            Height="450">
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                <GradientStop Color="#FF3AFF7C" Offset="0.0"/>
+                <GradientStop Color="#FF525450" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.Background>
+        <Border.Clip>
+            <RectangleGeometry RadiusX="10"
+                               RadiusY="10"
+                               Rect="0,0,780,450"/>
+        </Border.Clip>
+
+        <Canvas>
+            <DataGrid ItemsSource="{Binding Messages}" 
+                      Style="{StaticResource DataGridStyle}"
+                      Height="420"
+                      FontSize="23">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Body}" 
+                                        Header="{Binding DataContext.Model.Labels[Messages], Source={x:Reference LetterImage}}" 
+                                        ElementStyle="{StaticResource DataGridElementStyle}" 
+                                        Width="500" />
+                    <DataGridTextColumn Binding="{Binding FromUser}" 
+                                        Header="{Binding DataContext.Model.Labels[From], Source={x:Reference LetterImage}}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Image Source="/Assets/Images/Message/Letter.png" 
+                   Width="300" 
+                   Canvas.Left="500" 
+                   Canvas.Top="260" 
+                   Opacity="0.65" 
+                   x:Name="LetterImage">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform Angle="-15.246"/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+        </Canvas>
+    </Border>
+</UserControl>

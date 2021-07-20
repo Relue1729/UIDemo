@@ -1,0 +1,127 @@
+﻿<Window x:Class="UIDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UIDemo"
+        xmlns:viewModel="clr-namespace:UIDemo.ViewModel"
+        mc:Ignorable="d"
+        Title="UIDemo" 
+        Icon="/Assets/Images/Icon.ico"
+        Height="600" 
+        Width="1000"
+        WindowStyle="None"
+        ResizeMode="CanMinimize"
+        Background="Transparent"
+        AllowsTransparency="True" 
+        FontFamily="/UIDemo;component/Assets/Fonts/#Bebas Neue Book">
+
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
+
+    <StackPanel Orientation="Horizontal">
+
+        <Border Background="#2E3440"
+                CornerRadius="20,0,0,20"
+                Width="{Binding MenuBorderWidth}">
+
+            <Grid>
+                <StackPanel>
+                    <Image Source="/Assets/Images/Menu/Logo.png" 
+                           Margin="0,20,0,30"
+                           Height="30"/>
+
+                    <RadioButton    Content="{Binding Model.Labels[HomeViewButton]}"
+                                    Command="{Binding ChangeViewCommand}"
+                                    CommandParameter="HomeViewModel"
+                                    Style  ="{StaticResource MenuButtonStyle}"
+                                    IsChecked="{Binding RadioButtonChecks[HomeViewModel], Mode=TwoWay}"/>
+
+                    <RadioButton    Content="{Binding Model.Labels[WeatherViewButton]}"
+                                    Command="{Binding ChangeViewCommand}"
+                                    CommandParameter="WeatherViewModel"
+                                    Style  ="{StaticResource MenuButtonStyle}"
+                                    IsChecked="{Binding RadioButtonChecks[WeatherViewModel], Mode=TwoWay}"/>
+
+                    <RadioButton    Content="{Binding Model.Labels[SystemViewButton]}"
+                                    Command="{Binding ChangeViewCommand}"
+                                    CommandParameter="SystemViewModel"
+                                    Style  ="{StaticResource MenuButtonStyle}"
+                                    IsChecked="{Binding RadioButtonChecks[SystemViewModel], Mode=TwoWay}"/>
+
+                    <RadioButton    Content="{Binding Model.Labels[PhotoViewButton]}"
+                                    Command="{Binding ChangeViewCommand}"
+                                    CommandParameter="PhotoViewModel"
+                                    Style  ="{StaticResource MenuButtonStyle}"
+                                    IsChecked="{Binding RadioButtonChecks[PhotoViewModel], Mode=TwoWay}"/>
+
+                    <RadioButton    Content="{Binding Model.Labels[MessagesViewButton]}"
+                                    Command="{Binding ChangeViewCommand}"
+                                    CommandParameter="MessageViewModel"
+                                    Style  ="{StaticResource MenuButtonStyle}"
+                                    IsChecked="{Binding RadioButtonChecks[MessageViewModel], Mode=TwoWay}"/>
+                </StackPanel>
+
+                <RadioButton    VerticalAlignment="Bottom"
+                                Margin="0,0,0,20"
+                                Content="{Binding Model.Labels[ExitButton]}"
+                                Command="{Binding CloseWindowCommand}"
+                                Style  ="{StaticResource MenuButtonStyle}"/>
+            </Grid>
+        </Border>
+
+        <Border Background="#D8DEE9"
+                CornerRadius="0,20,20,0"
+                Width="{Binding ContentBorderWidth}">
+            <Border.Clip>
+                <RectangleGeometry RadiusX="20"
+                                   RadiusY="20"
+                                   Rect="{Binding ContentBorderClip}"/>
+            </Border.Clip>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="75"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="100"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBox Margin="0,0,0,5"
+                             Style="{StaticResource SearchTextboxStyle}"
+                             Grid.Column="0"/>
+
+                    <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="Right"
+                                Margin="5"
+                                Grid.Column="1">
+
+                        <Button Style   ="{StaticResource WindowControlButtonStyle}"
+                                Command ="{Binding ChangeWindowStateCommand}"
+                                CommandParameter="Minimized">
+                            <Image Style="{StaticResource MinimizeButton}"/>
+                        </Button>
+                        <Button Style   ="{StaticResource WindowControlButtonStyle}"
+                                Command ="{Binding ChangeWindowStateCommand}"
+                                CommandParameter="Maximized">
+                            <Image Style="{StaticResource MaximizeButton}"/>
+                        </Button>
+                        <Button Style   ="{StaticResource WindowControlButtonStyle}"
+                                Command ="{Binding CloseWindowCommand}">
+                            <Image Style="{StaticResource CloseButton}"/>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+
+                <ContentControl Content ="{Binding CurrentView}"
+                                Margin  ="10"
+                                Grid.Row="1"/>
+            </Grid>
+        </Border>
+    </StackPanel>
+</Window>
