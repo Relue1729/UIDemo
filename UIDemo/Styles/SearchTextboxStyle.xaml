@@ -24,7 +24,7 @@
                                      x:Name="SearchBox"/>
 
                             <TextBlock  IsHitTestVisible="False"
-                                        Text="П о и с к . . ."
+                                        Text="S e a r c h . . ."
                                         VerticalAlignment="Center"
                                         HorizontalAlignment="Center"
                                         Margin="10,0,0,0"

@@ -7,12 +7,12 @@ namespace UIDemo.Model
     {
         public IDictionary<string, string> Labels => new Dictionary<string, string>()
         {
-            { "HomeViewButton",     "Рабочий стол" },
-            { "WeatherViewButton",  "Погода"       },
-            { "SystemViewButton",   "Система"      },
-            { "PhotoViewButton",    "Фотографии"   },
-            { "MessagesViewButton", "Сообщения"    },
-            { "ExitButton",         "Выход"        }
+            { "HomeViewButton",     "Main"    },
+            { "WeatherViewButton",  "Weather" },
+            { "SystemViewButton",   "System"  },
+            { "PhotoViewButton",    "Photos"  },
+            { "MessagesViewButton", "Messages"},
+            { "ExitButton",         "Exit"    }
         };
     }
 }

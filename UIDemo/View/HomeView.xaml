@@ -86,7 +86,7 @@
                         </Image.RenderTransform>
                     </Image>
 
-                    <TextBlock Text="{Binding Model.Labels[Photo]}" Canvas.Left="35"/>
+                    <TextBlock Text="{Binding Model.Labels[Photos]}" Canvas.Left="35"/>
                 </Canvas>
             </Border>
         </StackPanel>
@@ -111,10 +111,10 @@
                     <DataGrid ItemsSource="{Binding NewsHeaders}" 
                               Style="{StaticResource DataGridStyle}"
                               Height="180"
-                              FontSize="18">
+                              FontSize="18" SelectionChanged="DataGrid_SelectionChanged">
                         <DataGrid.Columns>
                             <DataGridTextColumn Binding="{Binding}" 
-                                                Header="Главные новости сегодня" 
+                                                Header="Breaking news" 
                                                 ElementStyle="{StaticResource DataGridElementStyle}"
                                                 Width="480" />
                         </DataGrid.Columns>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using UIDemo.Common;
@@ -11,16 +12,16 @@ namespace UIDemo.Model
     {
         public IDictionary<string, string> Labels => new Dictionary<string, string>()
         {
-            { "Weather",  "Погода"       },
-            { "System",   "Система"      },
-            { "Photo",    "Фотографии"   },
-            { "Messages", "Сообщения"    },
-            { "NewsTitle","Главные новости сегодня" }
+            { "Weather",  "Weather"       },
+            { "System",   "System"        },
+            { "Photos",   "Photos"        },
+            { "Messages", "Messages"      }
         };
         public DateTime AlarmTime => new DateTime(2021,08,21,7,0,0);
         public async Task<List<string>> GetTopNewsHeaders()
         {
-            var xmlElement = await ApiHandler.GetXmlFromApi("https://news.google.com/rss?hl=ru"); 
+            var cultureInfo = CultureInfo.CurrentUICulture;
+            var xmlElement = await ApiHandler.GetXmlFromApi("https://news.google.com/rss?hl=" + cultureInfo.Name); 
             return (from item in xmlElement.Descendants("item")
                     select (string)item.Element("title"))
                     .Take(15).ToList();

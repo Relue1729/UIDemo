@@ -14,7 +14,7 @@
                 HorizontalAlignment="Center" 
                 VerticalAlignment="Center" 
                 Margin="0,0,80,150">
-        <StackPanel Width="250">
+        <StackPanel Width="270">
             <TextBlock Text="{Binding Model.Labels[RAM]}" 
                        HorizontalAlignment="Center"
                        FontSize="28" 
@@ -22,10 +22,10 @@
             <Image Source="/Assets/Images/System/RAMIcon.png" Height="100"/>
             <TextBlock Text="{Binding RAMInfoString}" 
                        HorizontalAlignment="Center" 
-                       FontSize="28" 
+                       FontSize="26" 
                        Margin="20"/>
         </StackPanel>
-        <StackPanel Width="250">
+        <StackPanel Width="270">
             <TextBlock Text="{Binding Model.Labels[CPU]}" 
                        HorizontalAlignment="Center" 
                        FontSize="28" 
@@ -33,7 +33,7 @@
             <Image Source="/Assets/Images/System/CPUIcon.png" Height="100" />
             <TextBlock Text="{Binding CPUInfoString}" 
                        HorizontalAlignment="Center" 
-                       FontSize="28" 
+                       FontSize="26" 
                        Margin="20"/>
         </StackPanel>
     </StackPanel>

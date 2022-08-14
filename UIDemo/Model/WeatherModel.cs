@@ -26,9 +26,9 @@ namespace UIDemo.Model
         {
             var apiLink = $"http://api.ipstack.com/check?access_key=83bd50db42dc2dcc6858342a24113210";
             var apiResponce = await ApiHandler.GetDynamicJObjectFromApi(apiLink);
-            return apiResponce.city ?? "Moscow";
+            return apiResponce.city ?? "London";
         }
-        public async Task<WeatherData> GetWeatherInfoFromApi(string city = "Moscow")
+        public async Task<WeatherData> GetWeatherInfoFromApi(string city = "London")
         {
             var apiLink = $"https://api.openweathermap.org/data/2.5/weather?q={city}&appid=742f72f0dbab8e81bc1a22165e7820da&units=metric";
             var apiResponce = await ApiHandler.GetDynamicJObjectFromApi(apiLink);

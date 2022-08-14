@@ -74,7 +74,7 @@ namespace UIDemo.ViewModel
             CPUInfoString = (int)cpuCounter.NextValue() + "%";
 
             var freeRamInGB = Math.Round(ramCounter.NextValue() / 1024, 1);
-            RAMInfoString = $"{freeRamInGB} ГБ Свободно " + (totalRam is null ? "" : $"из {totalRam} ГБ");
+            RAMInfoString = $"{freeRamInGB} GB Available " + (totalRam is null ? "" : $"/ {totalRam} GB total");
         }
     }
 }

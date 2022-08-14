@@ -10,8 +10,8 @@ namespace UIDemo.Model
     {
         public IDictionary<string, string> Labels => new Dictionary<string, string>()
         {
-            { "Messages", "Сообщения" },
-            { "From",     "От кого" }
+            { "Messages", "Messages" },
+            { "From",     "From"     }
         };
         public struct Message
         {
