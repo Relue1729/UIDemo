@@ -12,4 +12,4 @@ Photo screen doesn't really have anything
 
 Video demonstration:
 
-[![Video](http://img.youtube.com/vi/U4nsXuhSJxM/maxresdefaul.jpg)](http://www.youtube.com/watch?v=U4nsXuhSJxM "UI Showcase")
+[![Video](http://img.youtube.com/vi/U4nsXuhSJxM/maxresdefault.jpg)](http://www.youtube.com/watch?v=U4nsXuhSJxM "UI Showcase")
