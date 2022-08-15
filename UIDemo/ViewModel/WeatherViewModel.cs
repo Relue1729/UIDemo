@@ -13,7 +13,7 @@ namespace UIDemo.ViewModel
 
         private WeatherData weatherData;
 
-        private string city = "Город не определен";
+        private string city = "The city is unknown";
         public string City
         {
             get => city;
