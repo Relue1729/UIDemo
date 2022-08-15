@@ -1,15 +1,15 @@
 # UIDemo
 
-Небольшое MVVM UI демо
+Small MVVM UI Showcase project
 
-Новости на главном экране загружаются из Google News RSS
+News feed is taken from Google News RSS
 
-Вкладка погоды определяет город местоположения и показывает погоду в нем из Openweathermap API
+Weather screen takes weather data from Openweathermap API based on your IP
 
-Сообщения наполняются случайными цитатами из Quotable API
+Message screen is filled with random quotes from Quotable API
 
-На вкладке фото ничего нет, добавил больше ради симметрии.
+Photo screen doesn't really have anything
 
-Видео:
+Video demonstration:
 
-[![Video](http://img.youtube.com/vi/Vinw559KHRo/maxresdefault.jpg)](http://www.youtube.com/watch?v=Vinw559KHRo "UIShowcase")
+[![Video](http://img.youtube.com/vi/U4nsXuhSJxM/maxresdefault.jpg)](http://www.youtube.com/watch?v=U4nsXuhSJxM "UI Showcase")
