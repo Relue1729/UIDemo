@@ -12,10 +12,10 @@ namespace UIDemo.Model
     {
         public IDictionary<string, string> Labels => new Dictionary<string, string>()
         {
-            { "Weather",  "Weather"       },
-            { "System",   "System"        },
-            { "Photos",   "Photos"        },
-            { "Messages", "Messages"      }
+            { "Weather",  "Weather" },
+            { "System",   "System"  },
+            { "Photos",   "Photos"  },
+            { "Messages", "Messages"}
         };
         public DateTime AlarmTime => new DateTime(2021,08,21,7,0,0);
         public async Task<List<string>> GetTopNewsHeaders()
